@@ -1,16 +1,16 @@
-package com.dio.model;
+package com.dio.acessPoint.model;
 
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Data
-@Builder
-@Entity
-@Table(name = "categoriaUsuario")
-@NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
-@EqualsAndHashCode
+@NoArgsConstructor
+@Builder
 public class CategoriaUsuario {
+
+    private Long id;
 }

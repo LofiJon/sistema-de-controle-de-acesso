@@ -2,6 +2,7 @@ package com.dio.acessPoint.model;
 
 import lombok.*;
 
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -14,7 +15,7 @@ public class Localidade {
 
     private Long id;
 
-    @OneToMany
+    @ManyToOne
     private NivelAcesso nivelAcesso;
 
     private  String descricao;

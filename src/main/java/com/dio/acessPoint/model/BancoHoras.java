@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @Builder
 public class BancoHoras {
 
-    @Id
     @EmbeddedId
     private BancoHorasId id;
 

@@ -20,16 +20,16 @@ public class Movimentacao {
     @NoArgsConstructor
     @EqualsAndHashCode
     @Embeddable
-    public class ActivityLogId implements Serializable {
+    public class MovimentacaoId implements Serializable {
         private Long idMovimentacao;
         private Long idUsuario;
     }
 
     @EmbeddedId
-    private ActivityLogId activityLogId;
-    private LocalDateTime entryDate;
-    private LocalDateTime departureDate;
-    private BigDecimal activityPeriod;
+    private MovimentacaoId movimentacaoId;
+    private LocalDateTime dataEntrada;
+    private LocalDateTime dataSaida;
+    private BigDecimal periodo;
     @ManyToOne
     private Ocorrencia ocorrencia;
     @ManyToOne

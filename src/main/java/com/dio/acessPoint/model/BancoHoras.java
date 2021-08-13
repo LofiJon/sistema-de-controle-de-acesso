@@ -2,12 +2,12 @@ package com.dio.acessPoint.model;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 public class BancoHoras {
 
+    @Id
     @EmbeddedId
     private BancoHorasId id;
 

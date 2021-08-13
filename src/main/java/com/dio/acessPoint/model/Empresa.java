@@ -2,9 +2,9 @@ package com.dio.acessPoint.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
@@ -12,6 +12,8 @@ import javax.persistence.Table;
 @Builder
 public class Empresa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String descricao;

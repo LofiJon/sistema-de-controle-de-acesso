@@ -2,10 +2,9 @@ package com.dio.acessPoint.model;
 
 import lombok.*;
 
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,6 +12,8 @@ import javax.persistence.Table;
 @Builder
 public class Localidade {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne

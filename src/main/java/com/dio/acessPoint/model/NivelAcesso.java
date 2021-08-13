@@ -15,4 +15,6 @@ public class NivelAcesso {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    private  String descricao;
 }

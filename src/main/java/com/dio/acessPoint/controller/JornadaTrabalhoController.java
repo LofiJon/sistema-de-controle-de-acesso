@@ -19,4 +19,8 @@ public class JornadaTrabalhoController {
     public JornadaTrabalho createJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
         return jornadaTrabalhoService.saveJornada(jornadaTrabalho);
     }
+
+    public List<JornadaTrabalho> getJornadaList() {
+
+    }
 }

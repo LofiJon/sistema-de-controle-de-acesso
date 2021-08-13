@@ -3,10 +3,10 @@ package com.dio.acessPoint.controller;
 import com.dio.acessPoint.model.JornadaTrabalho;
 import com.dio.acessPoint.service.JornadaTrabalhoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/jornada")
@@ -20,7 +20,14 @@ public class JornadaTrabalhoController {
         return jornadaTrabalhoService.saveJornada(jornadaTrabalho);
     }
 
-    public List<JornadaTrabalho> getJornadaList() {
 
+    @GetMapping
+    public List<JornadaTrabalho> getJornadaList() {
+        return jornadaTrabalhoService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<JornadaTrabalho> getJornadaById(@PathVariable("id") Long id) throws Exception {
+        return ResponseEntity.ok(jornadaTrabalhoService.getById(id).orElseThrow(()-> new Exception("Jornada nao encontrada")));
     }
 }

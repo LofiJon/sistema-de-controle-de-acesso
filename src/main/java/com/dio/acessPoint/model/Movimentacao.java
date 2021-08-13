@@ -16,10 +16,12 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 public class Movimentacao {
 
-    @AllArgsConstructor
-    @NoArgsConstructor
     @EqualsAndHashCode
     @Embeddable
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     public class MovimentacaoId implements Serializable {
         private Long idMovimentacao;
         private Long idUsuario;

@@ -2,7 +2,9 @@ package com.dio.acessPoint.model;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -24,10 +26,10 @@ public class BancoHoras {
 
     private BigDecimal saldoHoras;
 
-    @Embeddable
-    @AllArgsConstructor
-    @NoArgsConstructor
     @EqualsAndHashCode
+    @Embeddable
+    @Getter
+    @Setter
     public class BancoHorasId implements Serializable {
         private long idBancoHora;
         private long idMovimento;

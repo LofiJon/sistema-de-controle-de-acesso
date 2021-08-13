@@ -11,7 +11,7 @@ public class JornadaTrabalhoService {
     @Autowired
     private JornadaTrabalhoRepository jornadaTrabalhoRepository;
 
-    public JornadaTrabalho save(JornadaTrabalho jornadaTrabalho ) {
-        jornadaTrabalhoRepository.save(jornadaTrabalho);
+    public JornadaTrabalho saveJornada(JornadaTrabalho jornadaTrabalho ) {
+        return jornadaTrabalhoRepository.save(jornadaTrabalho);
     }
 }

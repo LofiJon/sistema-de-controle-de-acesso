@@ -2,7 +2,9 @@ package com.dio.acessPoint.service;
 
 import com.dio.acessPoint.model.JornadaTrabalho;
 import com.dio.acessPoint.repository.JornadaTrabalhoRepository;
+import io.swagger.models.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,8 +28,13 @@ public class JornadaTrabalhoService {
         return jornadaTrabalhoRepository.findById(id);
     }
 
-    public JornadaTrabalho updateJornada(JornadaTrabalho jornadaTrabalho ) {
-        return jornadaTrabalhoRepository.save(jornadaTrabalho);
+    public ResponseEntity updateJornada(Long id,JornadaTrabalho jornadaTrabalho ) {
+        return jornadaTrabalhoRepository.findById(id)
+                .map(record -> {
+                    record.setDescricao((jornadaTrabalho.getDescricao()));
+                    JornadaTrabalho update = jornadaTrabalhoRepository.save(jornadaTrabalho);
+                    return ResponseEntity.ok().body(update);
+                }).orElse(ResponseEntity.notFound().build());
     }
 
     public void delete(Long id) {

@@ -33,8 +33,8 @@ public class JornadaTrabalhoController {
     }
 
     @PutMapping("/{id}")
-    public JornadaTrabalho updateJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
-        return jornadaTrabalhoService.updateJornada(jornadaTrabalho);
+    public ResponseEntity updateJornada(@PathVariable("id") Long id, @RequestBody JornadaTrabalho jornadaTrabalho) {
+        return jornadaTrabalhoService.updateJornada(id,jornadaTrabalho);
     }
 
     @DeleteMapping("/{id}")

@@ -1,6 +1,7 @@
 package com.dio.acessPoint.model;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Audited
 public class Empresa {
 
     @Id

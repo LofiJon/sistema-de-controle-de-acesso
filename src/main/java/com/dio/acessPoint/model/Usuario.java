@@ -1,6 +1,7 @@
 package com.dio.acessPoint.model;
 
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Audited
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

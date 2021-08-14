@@ -32,5 +32,21 @@ public class JornadaTrabalhoController {
         return ResponseEntity.ok(jornadaTrabalhoService.getById(id).orElseThrow(()-> new NoSuchElementException("Jornada nao encontrada")));
     }
 
+    @PutMapping("/{id}")
+    public JornadaTrabalho updateJornada(@RequestBody JornadaTrabalho jornadaTrabalho) {
+        return jornadaTrabalhoService.updateJornada(jornadaTrabalho);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteById(@PathVariable("id") Long id) throws Exception {
+        try {
+            jornadaTrabalhoService.delete(id);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return (ResponseEntity<JornadaTrabalho>) ResponseEntity.ok();
+    }
+
 
 }
